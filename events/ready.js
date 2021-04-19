@@ -1,4 +1,10 @@
-const scalingChannels = require('./channelmanager.js');
+const scalingChannels1 = require('./hilfechannel.js');
+const scalingChannels2 = require('./duo.js');
+const scalingChannels3 = require('./trio.js');
+const scalingChannels4 = require('./squad.js');
+const scalingChannels5 = require('./penta.js');
+const scalingChannels6 = require('./hexa.js');
+const scalingChannels7 = require('./hepta.js');
 
 module.exports = {
 	name: 'ready',
@@ -49,7 +55,13 @@ module.exports = {
 		}, 15000);
 
 		// ❯ ChannelManager
-		scalingChannels(client)
+		scalingChannels1(client)
+		scalingChannels2(client)
+		scalingChannels3(client)
+		scalingChannels4(client)
+		scalingChannels5(client)
+		scalingChannels6(client)
+		scalingChannels7(client)
 
 	},
 };

@@ -1,8 +1,8 @@
-let channelName = "║ Duo Raum" || "║ Trio Raum" || "║ Squad Raum" || "║ Penta Raum" || "║ Hexa Raum" || "║ Hepta Raum" || "║ Octa Raum"
+var Duo = "Hilfechannel";
 
 const getVoiceChannels = (guild) => {
   return guild.channels.cache.filter((channel) => {
-    return channel.type === 'voice' && channel.name === channelName
+    return channel.type === 'voice' && channel.name === Duo
   })
 }
 
@@ -14,7 +14,7 @@ module.exports = (client) => {
     const channelId = joined ? newState.channelID : oldState.channelID
     let channel = guild.channels.cache.get(channelId)
 
-    if (channel.name === channelName) {
+    if (channel.name === Duo) {
       if (joined) {
         const channels = getVoiceChannels(guild)
 
@@ -36,11 +36,11 @@ module.exports = (client) => {
             rawPosition,
           } = channel
 
-          guild.channels.create(channelName, {
+          guild.channels.create(Duo, {
             type,
             bitrate,
             userLimit,
-            parent: "833504028620095548",
+            parent: "833689325006094346",
             permissionOverwrites,
             position: rawPosition,
           }).then((channel) => {
@@ -56,7 +56,7 @@ module.exports = (client) => {
     } else if (oldState.channelID) {
       channel = guild.channels.cache.get(oldState.channelID)
       if (
-        channel.name === channelName &&
+        channel.name === Duo &&
         channel.members.size === 0 &&
         getVoiceChannels(guild).size > 1
       ) {

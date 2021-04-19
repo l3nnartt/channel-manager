@@ -15,13 +15,13 @@ module.exports = {
 			});
 
 			//Discord Log
-			//var embed = new Discord.MessageEmbed()
-			//	.setAuthor(`${message.author.tag}`, message.author.displayAvatarURL())
-			//	.setDescription(`${message.content}`)
-			//	.setTimestamp(message.createdAt)
-			//	.setFooter(`${client.user.username} Log-System`)
-        	//	.setColor("#2a2a2a");
-			//client.channels.fetch('828385793528561694').then(channel => channel.send(embed));
+			var embed = new Discord.MessageEmbed()
+				.setAuthor(`${message.author.tag}`, message.author.displayAvatarURL())
+				.setDescription(`${message.content}`)
+				.setTimestamp(message.createdAt)
+				.setFooter(`${client.user.username} Log-System`)
+        		.setColor("#2a2a2a");
+			client.channels.fetch('833713378194620416').then(channel => channel.send(embed));
 		}
 	},
 };
