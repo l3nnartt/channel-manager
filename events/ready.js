@@ -43,7 +43,7 @@ module.exports = {
 		// ❯ Rich Presence
 		setInterval(() => {
 			const activities = [
-				`-help | ${client.guilds.cache.reduce((a, g) => a + g.memberCount, 0)} Mitglieder`
+				`${client.guilds.cache.reduce((a, g) => a + g.memberCount, 0)} Mitgliedern | -help`
 			];
 			let activity = activities[Math.floor(Math.random() * activities.length)];
 			client.user.setActivity(
