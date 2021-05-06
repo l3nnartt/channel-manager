@@ -43,13 +43,13 @@ module.exports = {
 		// ❯ Rich Presence
 		setInterval(() => {
 			const activities = [
-				`${client.guilds.cache.reduce((a, g) => a + g.memberCount, 0)} Mitgliedern | -help`
+				`4rena mit ${client.guilds.cache.reduce((a, g) => a + g.memberCount, 0)} Mitgliedern`
 			];
 			let activity = activities[Math.floor(Math.random() * activities.length)];
 			client.user.setActivity(
 				activity,
 				{
-				type: "LISTENING"
+				type: "PLAYING"
 				}
 			);
 		}, 15000);
