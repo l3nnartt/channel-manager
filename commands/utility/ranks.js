@@ -18,7 +18,8 @@ module.exports = {
                 { name: 'Krieger', value: `4096 Punkte <@&842060227792338984>`},
                 { name: 'Killer', value: `8192 Punkte <@&842060318461001728>`},
                 { name: 'Profikiller', value: `16348 Punkte <@&842057955843244032>`},
-                { name: 'Meisterkiller', value: `32768 Punkte <@&617079551843106816>`})
+                { name: 'Meisterkiller', value: `32768 Punkte <@&617079551843106816>`},
+                { name: 'Killaura', value: `65536 Punkte <@&848506456969445377>`})
 			.setTimestamp(message.createdAt)
 			.setFooter(`${client.user.username}`, client.user.displayAvatarURL())
 			.setColor("#4680FC");
