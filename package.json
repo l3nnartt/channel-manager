@@ -1,22 +1,5 @@
 {
   "dependencies": {
-    "await": "^0.2.6",
     "discord.js": "^12.5.1",
-    "discord.js-commando": "^0.12.2",
-    "dom-parser": "^0.1.6",
-    "mc-stats": "^1.0.7",
-    "minecraft-server-util": "^3.4.2",
-    "moment": "^2.29.1",
-    "ms": "^2.1.2",
-    "mysql": "^2.18.1",
-    "node-fetch": "^2.6.1",
-    "os": "^0.1.1",
-    "puppeteer": "^7.0.1",
-    "request": "^2.88.2",
-    "sequelize": "^6.5.0",
-    "sqlite3": "^5.0.2",
-    "topgg-autoposter": "^1.1.6",
-    "util": "^0.12.3",
-    "xvfb": "^0.4.0"
   }
 }
