@@ -1,9 +1,9 @@
-const Discord = require("discord.js");
 const { token } = require('../../config.json');
+const fetch = require('node-fetch');
 
 module.exports = {
 	name: 'youtube',
-	description: 'Misst die Latenz zwischen dem Command und der Antwort auf den Command',
+	description: 'watch2gether',
 	cooldown: 5,
 	execute(message, args, client) {
 		const voice = message.member.voice.channel;
@@ -26,12 +26,10 @@ module.exports = {
       .then((response) => response.json())
       .then((invite) => {
         if (!invite.code)
-          return message.say('Ích kann das Minigame nicht starten.');
-        message
-          .say(
+          return message.channel.send('Ích kann das Minigame nicht starten.');
+          message.channel.send(
             `Klicke auf den Link um YouTube zusammen zu schauen:\nhttps://discord.com/invite/${invite.code}`
           ).then((m) => m.delete({ timeout: 86400000 }));
       });
-    }
 	}
 };
