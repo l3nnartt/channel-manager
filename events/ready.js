@@ -65,11 +65,11 @@ module.exports = {
 
 		// ❯ Autorole
 		client.on("guildMemberAdd", member => {
-			member.roles.add(member.guild.roles.cache.find(role => role.name == "⠀⠀⠀⠀⠀⠀⠀⠀⠀Spezial Ränge⠀⠀⠀⠀⠀⠀⠀"));
-			member.roles.add(member.guild.roles.cache.find(role => role.name == "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀Spielmodi⠀⠀⠀⠀⠀⠀⠀⠀"));
-			member.roles.add(member.guild.roles.cache.find(role => role.name == "⠀⠀⠀⠀⠀⠀⠀⠀⠀4rena Ränge⠀⠀⠀⠀⠀⠀⠀⠀"));
-			member.roles.add(member.guild.roles.cache.find(role => role.name == "4rena"));
-			member.roles.add(member.guild.roles.cache.find(role => role.name == "[ 1 ] Camper"));
+			member.roles.add(member.guild.roles.cache.find(role => role.name === "⠀⠀⠀⠀⠀⠀⠀⠀⠀Spezial Ränge⠀⠀⠀⠀⠀⠀⠀"));
+			member.roles.add(member.guild.roles.cache.find(role => role.name === "⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀Spielmodi⠀⠀⠀⠀⠀⠀⠀⠀"));
+			member.roles.add(member.guild.roles.cache.find(role => role.name === "⠀⠀⠀⠀⠀⠀⠀⠀⠀4rena Ränge⠀⠀⠀⠀⠀⠀⠀⠀"));
+			member.roles.add(member.guild.roles.cache.find(role => role.name === "4rena"));
+			member.roles.add(member.guild.roles.cache.find(role => role.name === "[ 1 ] Camper"));
 		  })
 
 	},
