@@ -4,7 +4,7 @@ const { token } = require('./config.json');
 
 //Intents
 const myIntents = new Intents();
-myIntents.add(Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MEMBERS);
+myIntents.add(Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MEMBERS, Intents.FLAGS.GUILD_VOICE_STATES);
 
 //Partials
 const myPartials = [];

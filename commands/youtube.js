@@ -8,11 +8,11 @@ module.exports = {
         .setName('youtube')
         .setDescription('Ermöglicht das gemeinsame schauen von YouTube Videos'),
     async execute(interaction, client) {
-        let voice = interaction.member.voice.channel;
-        if (!voice) {
+        let voiceId = interaction.member.voice.channelId;
+        if (!voiceId) {
             interaction.reply(`Du musst in einem Sprachchannel sein um die Aktion zu starten`)
         } else {
-            fetch(`https://discord.com/api/v8/channels/${voice.id}/invites`, {
+            fetch(`https://discord.com/api/v8/channels/${voiceId}/invites`, {
                 method: 'POST',
                 body: JSON.stringify({
                     max_age: 86400,
@@ -30,7 +30,7 @@ module.exports = {
             .then((response) => response.json())
             .then((invite) => {
                 if (!invite.code) return interaction.reply('Ich kann YouTube nicht starten.');
-                interaction.reply({ content: `Klicke auf den Link um YouTube zusammen zu schauen:\nhttps://discord.com/invite/${invite.code}`, ephemeral: true });
+                interaction.reply({ content: `Klicke auf den Link um YouTube zusammen zu schauen:\n https://discord.com/invite/${invite.code}`, ephemeral: true });
             });
         }
     },
