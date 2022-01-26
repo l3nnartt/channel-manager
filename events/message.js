@@ -2,9 +2,9 @@ const fs = require('fs');
 const Discord = require("discord.js");
 
 module.exports = {
-	name: 'message',
+	name: 'messageCreate',
 	execute(message, client) {
-		if (message.channel.type == 'dm') {
+		if (message.channel.type === 'dm') {
 			
 			//TimeStamp
 			const timestamp = new Date()
@@ -15,12 +15,12 @@ module.exports = {
 			});
 
 			//Discord Log
-			var embed = new Discord.MessageEmbed()
-				.setAuthor(`${message.author.tag}`, message.author.displayAvatarURL())
+			const embed = new Discord.MessageEmbed()
+				.setAuthor({ name: `${message.author.tag}`, iconURL: message.author.displayAvatarURL() })
 				.setDescription(`${message.content}`)
 				.setTimestamp(message.createdAt)
-				.setFooter(`${client.user.username} Log-System`)
-        		.setColor("#2a2a2a");
+				.setFooter({ text: `${client.user.username} Log-System` })
+				.setColor("#2a2a2a");
 			client.channels.fetch('833713378194620416').then(channel => channel.send(embed));
 		}
 	},
