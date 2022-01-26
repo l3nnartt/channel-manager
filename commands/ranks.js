@@ -21,7 +21,7 @@ module.exports = {
                 { name: 'Meisterkiller', value: `32768 Punkte <@&617079551843106816>`},
                 { name: 'Killaura', value: `65536 Punkte <@&848506456969445377>`})
             .setTimestamp(interaction.createdAt)
-            .setFooter(`${client.user.username}`, client.user.displayAvatarURL())
+            .setFooter({ text: `${client.user.username}`, iconURL: client.user.displayAvatarURL() })
             .setColor("#4680FC");
         interaction.reply({embeds: [embed]});
     },
