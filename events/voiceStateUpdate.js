@@ -1,8 +1,6 @@
 module.exports = {
     name: 'voiceStateUpdate',
-    async execute(oldState, newState, client) {
-        const user = await client.users.fetch(newState.id);
-
+    async execute(oldState, newState) {
         if (newState.channel === null) return;
         if (newState.channel.parent.id === '833501385454518272') {
 
