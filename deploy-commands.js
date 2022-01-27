@@ -26,7 +26,7 @@ const rest = new REST({ version: '9' }).setToken(token);
             //Routes.applicationCommands(clientId),
             { body: commands },
         );
-        console.log(commands)
+        //console.log(commands)
         console.log('Successfully reloaded application (/) commands.');
     } catch (error) {
         console.error(error);
