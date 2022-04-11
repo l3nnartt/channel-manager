@@ -2,7 +2,6 @@ module.exports = {
 	name: 'ready',
 	once: true,
 	execute(client) {
-		//Bot gestartet
 		console.log(' ')
 		console.log('┌──────────────────────────────────── Login ─────────────────────────────────────────┐')
 		console.log(`│ > Eingeloggt als ${client.user.tag}!                                         │`);
@@ -30,19 +29,5 @@ module.exports = {
 		console.log(content)
 		console.log('└────────────────────────────────────────────────────────────────────────────────────┘    ')
 		console.log(' ')
-
-		//Rich Presence
-		setInterval(() => {
-			const activities = [
-				`4rena mit ${client.guilds.cache.reduce((a, g) => a + g.memberCount, 0)} Mitgliedern`
-			];
-			let activity = activities[Math.floor(Math.random() * activities.length)];
-			client.user.setActivity(
-				activity,
-				{
-					type: "PLAYING"
-				}
-			);
-		}, 15000);
 	},
 };

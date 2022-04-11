@@ -1,12 +1,12 @@
-const fs = require('fs');
-const { Client, Collection, Intents, MessageActionRow, MessageButton, MessageEmbed } = require('discord.js');
+const { fs } = require('fs');
+const { Client, Collection, Intents, MessageEmbed } = require('discord.js');
 const { token } = require('./config.json');
 
-//Intents
+// Intents
 const myIntents = new Intents();
 myIntents.add(Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MEMBERS, Intents.FLAGS.GUILD_VOICE_STATES, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.DIRECT_MESSAGES);
 
-//Partials
+// Partials
 const myPartials = [];
 myPartials.push('MESSAGE', 'GUILD_MEMBER', 'CHANNEL');
 
@@ -16,13 +16,13 @@ client.commands = new Collection();
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 const eventFiles = fs.readdirSync('./events').filter(file => file.endsWith('.js'));
 
-//Command Handler
+// Command Handler
 for (const file of commandFiles) {
 	const command = require(`./commands/${file}`);
 	client.commands.set(command.data.name, command);
 }
 
-//Event Handler
+// Event Handler
 for (const file of eventFiles) {
 	const event = require(`./events/${file}`);
 	if (event.once) {

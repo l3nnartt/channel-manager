@@ -1,6 +1,7 @@
 {
 	"token": "TOKEN",
-	"version": "VERSION",
-	"clientId": "CLIENT_ID",
-	"guildId": "GUILD_ID"
+	"clientId": "CLIENTID",
+	"guildId": "GUILDID",
+	"createChannel": "CREATECHANNEL",
+	"existingChannel": "EXISTINGCHANNEL"
 }
