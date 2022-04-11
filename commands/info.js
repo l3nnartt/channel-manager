@@ -1,6 +1,6 @@
-const { SlashCommandBuilder } = require('@discordjs/builders');
-const { MessageEmbed } = require('discord.js');
-const { config } = require("../config.json");
+const {SlashCommandBuilder} = require('@discordjs/builders');
+const {MessageEmbed} = require('discord.js');
+const {config} = require("../config.json");
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -20,13 +20,13 @@ module.exports = {
                     .setTitle(`${client.user.username} • Informationen`)
                     .setThumbnail(client.user.displayAvatarURL())
                     .addFields(
-                        { name: 'Server', value: `${totalGuilds}`, inline: true },
-                        { name: 'Channel', value: `${client.channels.cache.size}`, inline: true },
-                        { name: 'Users', value: `${totalMembers}`, inline: true },
-                        { name: 'Version', value: `${config.version}`, inline: true},
-                        { name: 'Developer', value: `<@398101340322136075>`, inline: true})
+                        {name: 'Server', value: `${totalGuilds}`, inline: true},
+                        {name: 'Channel', value: `${client.channels.cache.size}`, inline: true},
+                        {name: 'Users', value: `${totalMembers}`, inline: true},
+                        {name: 'Version', value: `${config.version}`, inline: true},
+                        {name: 'Developer', value: `<@398101340322136075>`, inline: true})
                     .setTimestamp(interaction.createdAt)
-                    .setFooter({ text: `${client.user.username}`, iconURL: client.user.displayAvatarURL() })
+                    .setFooter({text: `${client.user.username}`, iconURL: client.user.displayAvatarURL()})
                     .setColor("#4680FC");
                 return interaction.reply({embeds: [embed]});
             }).catch(console.error);

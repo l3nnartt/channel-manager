@@ -1,4 +1,4 @@
-const { createChannel, existingChannel } = require('../config.json');
+const {createChannel, existingChannel} = require('../config.json');
 
 module.exports = {
     name: 'voiceStateUpdate',

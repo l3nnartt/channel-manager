@@ -1,7 +1,7 @@
 {
-	"token": "TOKEN",
-	"clientId": "CLIENTID",
-	"guildId": "GUILDID",
-	"createChannel": "CREATECHANNEL",
-	"existingChannel": "EXISTINGCHANNEL"
+  "token": "TOKEN",
+  "clientId": "CLIENTID",
+  "guildId": "GUILDID",
+  "createChannel": "CREATECHANNEL",
+  "existingChannel": "EXISTINGCHANNEL"
 }
