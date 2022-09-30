@@ -1,14 +1,15 @@
 const {fs} = require('fs');
-const {Client, Collection, Intents, MessageEmbed} = require('discord.js');
+const {Client, Collection, Partials, EmbedBuilder, Colors} = require('discord.js');
 const {token} = require('./config.json');
+const {GatewayIntentBits} = require("discord-api-types/v10");
 
-// Intents
-const myIntents = new Intents();
-myIntents.add(Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MEMBERS, Intents.FLAGS.GUILD_VOICE_STATES, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.DIRECT_MESSAGES);
+//Intents
+const myIntents = []
+myIntents.push(GatewayIntentBits.Guilds, GatewayIntentBits.GuildMembers, GatewayIntentBits.GuildVoiceStates, GatewayIntentBits.GuildMessages, GatewayIntentBits.DirectMessages);
 
 // Partials
 const myPartials = [];
-myPartials.push('MESSAGE', 'GUILD_MEMBER', 'CHANNEL');
+myPartials.push(Partials.Message, Partials.GuildMember, Partials.Channel);
 
 const client = new Client({intents: myIntents, partials: myPartials});
 client.commands = new Collection();
@@ -43,12 +44,12 @@ client.on('interactionCreate', async interaction => {
         await command.execute(interaction, client);
     } catch (error) {
         console.error(error);
-        const reply = new MessageEmbed()
+        const reply = new EmbedBuilder()
             .setTitle(`${client.user.username} • Error`)
             .setTimestamp(interaction.createdAt)
             .setFooter({text: `${client.user.username}`, iconURL: client.user.displayAvatarURL()})
             .setDescription(`An error has occurred. Please contact <@398101340322136075>!\n\n Error:\n \`\`\`${error}\`\`\``)
-            .setColor("#4680FC");
+            .setColor(Colors.Red);
         return interaction.reply({ephemeral: true, embeds: [reply]});
     }
 });

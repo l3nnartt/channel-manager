@@ -1,0 +1,7 @@
+version: 3
+services:
+  timolia-stats:
+    image: ghcr.io/l3nnartt/channel-manager
+    restart: always
+    volumes:
+      - .\config.json:/bot/config.json
