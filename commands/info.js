@@ -25,7 +25,7 @@ module.exports = {
                         {name: 'Version', value: `${config.version}`, inline: true},
                         {name: 'Developer', value: `<@398101340322136075>`, inline: true})
                     .setTimestamp(interaction.createdAt)
-                    .setFooter({text: `${client.user.username}`, iconURL: client.user.displayAvatarURL()})
+                    .setFooter({text: client.user.username, iconURL: client.user.displayAvatarURL()})
                     .setColor(Colors.Blurple);
                 return interaction.reply({embeds: [embed]});
             }).catch(console.error);

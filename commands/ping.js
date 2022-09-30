@@ -9,8 +9,8 @@ module.exports = {
             .setTitle(`${client.user.username} • Ping`)
             .setDescription(`Latency is ${Date.now() - interaction.createdTimestamp}ms. API Latency is ${Math.round(client.ws.ping)}ms`)
             .setTimestamp(interaction.createdAt)
-        .setColor(Colors.Green)
-            .setFooter({text: `${client.user.username}`, iconURL: client.user.displayAvatarURL()});
+            .setColor(Colors.Green)
+            .setFooter({text: client.user.username, iconURL: client.user.displayAvatarURL()});
         interaction.reply({embeds: [embed]});
     },
 };
