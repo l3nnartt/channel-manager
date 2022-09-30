@@ -1,9 +1,9 @@
-const {fs} = require('fs');
+const fs = require('fs');
 const {Client, Collection, Partials, EmbedBuilder, Colors} = require('discord.js');
 const {token} = require('./config.json');
 const {GatewayIntentBits} = require("discord-api-types/v10");
 
-//Intents
+// Intents
 const myIntents = []
 myIntents.push(GatewayIntentBits.Guilds, GatewayIntentBits.GuildMembers, GatewayIntentBits.GuildVoiceStates, GatewayIntentBits.GuildMessages, GatewayIntentBits.DirectMessages);
 
