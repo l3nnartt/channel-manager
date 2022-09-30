@@ -4,9 +4,9 @@ module.exports = {
     execute(client) {
         console.log(' ')
         console.log('┌──────────────────────────────────── Login ─────────────────────────────────────────┐')
-        console.log(`│ > Eingeloggt als ${client.user.tag}!                                         │`);
-        console.log('├──────────────────────────────────── Anzahl ────────────────────────────────────────┤')
-        console.log(`│ > Aktiv auf ${client.guilds.cache.size} Servern!                                                            │`)
+        console.log(`│ > Logged in as ${client.user.tag}!                                                 │`);
+        console.log('├──────────────────────────────────── Stats ─────────────────────────────────────────┤')
+        console.log(`│ > Currently active on ${client.guilds.cache.size} servers!                         │`)
         console.log('│──────────────────────────────────── Server ────────────────────────────────────────│')
         let content = "";
         let s = "";
@@ -21,13 +21,13 @@ module.exports = {
             }
             content += ` > ${guild.name} member's ${guild.memberCount}`
 
-            for (i = 0; i < spaces; i++) {
+            for (let i = 0; i < spaces; i++) {
                 content += ' '
             }
             content += '│'
         })
         console.log(content)
-        console.log('└────────────────────────────────────────────────────────────────────────────────────┘    ')
+        console.log('└────────────────────────────────────────────────────────────────────────────────────┘')
         console.log(' ')
     },
 };
